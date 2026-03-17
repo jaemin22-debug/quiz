@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snow White Reading Quiz</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 20px; }
+        h1 { text-align: center; color: #2c3e50; }
+        .question-container { margin-bottom: 30px; padding-bottom: 20px; border-bottom: 1px solid #eee; }
+        .passage-box { border: 2px solid #7f8c8d; background-color: #f9f9f9; padding: 15px; margin: 15px 0; border-radius: 5px; font-style: italic; }
+        .options { list-style-type: none; padding: 0; }
+        .options li { margin-bottom: 10px; }
+        button { display: block; width: 100%; padding: 15px; background-color: #3498db; color: white; border: none; border-radius: 5px; font-size: 18px; cursor: pointer; margin-top: 20px; }
+        button:hover { background-color: #2980b9; }
+        #result { margin-top: 20px; font-size: 20px; font-weight: bold; text-align: center; }
+    </style>
+</head>
+<body>
+
+    <h1>Snow White Reading Quiz</h1>
+    <p>Read the passages from the text carefully and answer the questions below.</p>
+
+    <form id="quizForm">
+        <!-- Question 1 -->
+        <div class="question-container">
+            <p><strong>1. Read the following passage. Which of the following is the closest in meaning to the underlined word?</strong></p>
+            <div class="passage-box">
+                "Walt Disney's Snow White and the Seven Dwarfs (1937) has so overshadowed other versions of the story that it is easy to forget that the tale is widely <u>disseminated</u> across a variety of cultures."
+            </div>
+            <ul class="options">
+                <li><label><input type="radio" name="q1" value="a"> a) isolated</label></li>
+                <li><label><input type="radio" name="q1" value="b"> b) spread</label></li>
+                <li><label><input type="radio" name="q1" value="c"> c) forgotten</label></li>
+                <li><label><input type="radio" name="q1" value="d"> d) criticized</label></li>
+            </ul>
+        </div>
+
+        <!-- Question 2 -->
+        <div class="question-container">
+            <p><strong>2. Read the following passage. Which of the following best fits in the blank?</strong></p>
+            <div class="passage-box">
+                "In many versions of the tale, the evil queen is the girl's biological mother, not a stepmother. (The Grimms, in an effort to preserve the ________ of motherhood, were forever turning biological mothers into stepmothers.)"
+            </div>
+            <ul class="options">
+                <li><label><input type="radio" name="q2" value="a"> a) cruelty</label></li>
+                <li><label><input type="radio" name="q2" value="b"> b) wealth</label></li>
+                <li><label><input type="radio" name="q2" value="c"> c) sanctity</label></li>
+                <li><label><input type="radio" name="q2" value="d"> d) burden</label></li>
+            </ul>
+        </div>
+
+        <!-- Question 3 -->
+        <div class="question-container">
+            <p><strong>3. Read the following passage. Which of the following is the closest in meaning to the underlined word?</strong></p>
+            <div class="passage-box">
+                "She was a beautiful lady, but proud and <u>overbearing</u>, and she could not bear the thought that anyone might be more beautiful than she was. She owned a magic mirror..."
+            </div>
+            <ul class="options">
+                <li><label><input type="radio" name="q3" value="a"> a) modest</label></li>
+                <li><label><input type="radio" name="q3" value="b"> b) generous</label></li>
+                <li><label><input type="radio" name="q3" value="c"> c) domineering</label></li>
+                <li><label><input type="radio" name="q3" value="d"> d) timid</label></li>
+            </ul>
+        </div>
+
+        <!-- Question 4 -->
+        <div class="question-container">
+            <p><strong>4. Read the following passage. Which of the following best fits in the blank?</strong></p>
+            <div class="passage-box">
+                "The huntsman obeyed and took the girl out into the woods, but just as he was taking out his hunting knife and about to take aim at her innocent heart, she began weeping and ________ with him."
+            </div>
+            <ul class="options">
+                <li><label><input type="radio" name="q4" value="a"> a) arguing</label></li>
+                <li><label><input type="radio" name="q4" value="b"> b) pleading</label></li>
+                <li><label><input type="radio" name="q4" value="c"> c) fighting</label></li>
+                <li><label><input type="radio" name="q4" value="d"> d) laughing</label></li>
+            </ul>
+        </div>
+
+        <!-- Question 5 -->
+        <div class="question-container">
+            <p><strong>5. Read the following passage. Which of the following is the closest in meaning to the underlined word?</strong></p>
+            <div class="passage-box">
+                "By staining her face and dressing up as an old peddler woman, she made herself completely <u>unrecognizable</u>. In that disguise she traveled beyond the seven hills..."
+            </div>
+            <ul class="options">
+                <li><label><input type="radio" name="q5" value="a"> a) unidentifiable</label></li>
+                <li><label><input type="radio" name="q5" value="b"> b) conspicuous</label></li>
+                <li><label><input type="radio" name="q5" value="c"> c) transparent</label></li>
+                <li><label><input type="radio" name="q5" value="d"> d) familiar</label></li>
+            </ul>
+        </div>
+
+        <!-- Question 6 -->
+        <div class="question-container">
+            <p><strong>6. Read the following passage. Which of the following is the closest in meaning to the underlined word?</strong></p>
+            <div class="passage-box">
+                "The queen went into a remote, hidden chamber in which no one ever set foot and made an apple full of poison. On the outside it looked beautiful—white with red cheeks—and if you saw it, you <u>craved</u> it."
+            </div>
+            <ul class="options">
+                <li><label><input type="radio" name="q6" value="a"> a) desired</label></li>
+                <li><label><input type="radio" name="q6" value="b"> b) despised</label></li>
+                <li><label><input type="radio" name="q6" value="c"> c) ignored</label></li>
+                <li><label><input type="radio" name="q6" value="d"> d) feared</label></li>
+            </ul>
+        </div>
+
+        <!-- Question 7 -->
+        <div class="question-container">
+            <p><strong>7. Read the following passage. Which of the following best fits in the blank?</strong></p>
+            <div class="passage-box">
+                "They brought the coffin up to the top of a mountain, and one of them always remained by it to keep ________. Animals also came to mourn Snow White, first an owl, then a raven, and finally a dove."
+            </div>
+            <ul class="options">
+                <li><label><input type="radio" name="q7" value="a"> a) silent</label></li>
+                <li><label><input type="radio" name="q7" value="b"> b) vigil</label></li>
+                <li><label><input type="radio" name="q7" value="c"> c) warm</label></li>
+                <li><label><input type="radio" name="q7" value="d"> d) pace</label></li>
+            </ul>
+        </div>
+
+        <button type="button" onclick="checkAnswers()">Submit and Get Score</button>
+    </form>
+
+    <div id="result"></div>
+
+    <script>
+        function checkAnswers() {
+            const answers = { q1: 'b', q2: 'c', q3: 'c', q4: 'b', q5: 'a', q6: 'a', q7: 'b' };
+            let score = 0;
+            let total = 7;
+
+            for (let i = 1; i <= total; i++) {
+                const selected = document.querySelector(`input[name="q${i}"]:checked`);
+                if (selected && selected.value === answers[`q${i}`]) {
+                    score++;
+                }
+            }
+
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = `Your Score: ${score} / ${total}`;
+            if (score === total) {
+                resultDiv.style.color = "green";
+                resultDiv.innerHTML += "<br>Excellent work!";
+            } else if (score >= 4) {
+                resultDiv.style.color = "blue";
+                resultDiv.innerHTML += "<br>Good job, but you can review the text again.";
+            } else {
+                resultDiv.style.color = "red";
+                resultDiv.innerHTML += "<br>Please read the story more carefully and try again.";
+            }
+        }
+    </script>
+
+</body>
+</html>
