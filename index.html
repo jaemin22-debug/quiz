@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shakespeare Sonnets Quiz</title>
+    <title>Shakespeare Sonnets: Grammar Quiz</title>
     <style>
         :root {
             --primary-color: #2c3e50;
@@ -77,15 +77,17 @@
             background-color: #d4edda !important;
             border-color: #c3e6cb !important;
             color: #155724;
+            font-weight: bold;
         }
         button.incorrect {
             background-color: #f8d7da !important;
             border-color: #f5c6cb !important;
             color: #721c24;
         }
-        .feedback {
+        .result-mark {
             margin-top: 10px;
             font-weight: bold;
+            font-size: 1.2em;
             display: none;
         }
         u { text-decoration: underline; font-weight: bold; color: #e67e22; }
@@ -94,140 +96,128 @@
 <body>
 
 <div class="container">
-    <h1>Shakespeare Sonnets Quiz</h1>
+    <h1>Shakespeare Sonnets: Grammar Quiz</h1>
 
     <div class="quiz-item">
         <div class="sonnet-box">
-[Sonnet 12] [cite: 31]
-When I do count the clock that tells the time, [cite: 23]
-And see the brave day sunk in hideous night; [cite: 23]
-...
-When lofty trees I see barren of leaves, [cite: 25]
-Which <u>erst</u> from heat did <u>canopy</u> the herd, [cite: 25]
-And summer's green all girded up in sheaves... [cite: 25]</div>
-        <div class="question">Q1. 위 지문의 밑줄 친 'erst'의 의미와 'canopy'의 문법적 기능으로 올바른 것은?</div>
+[Sonnet 12]
+When lofty trees I see barren of leaves,
+Which <u>erst</u> from heat did <u>canopy</u> the herd,
+And summer's green all girded up in sheaves...</div>
+        <div class="question">Q1. What is the meaning of "erst" and the grammatical function of "canopy" in this context?</div>
         <div class="options">
-            <button onclick="checkAnswer(this, true)">1) 'formerly' (이전에) [cite: 33] / 동사 (그늘을 드리우다)</button>
-            <button onclick="checkAnswer(this, false)">2) 'often' (자주) / 명사 (덮개)</button>
-            <button onclick="checkAnswer(this, false)">3) 'early' (일찍) / 형용사 (울창한)</button>
-            <button onclick="checkAnswer(this, false)">4) 'never' (결코) / 부사 (가리며)</button>
+            <button onclick="checkAnswer(this, true)">1) "formerly" / Verb (to cover or shield)</button>
+            <button onclick="checkAnswer(this, false)">2) "often" / Noun (a covering)</button>
+            <button onclick="checkAnswer(this, false)">3) "early" / Adjective (thickly leaved)</button>
+            <button onclick="checkAnswer(this, false)">4) "never" / Adverb (protectively)</button>
         </div>
-        <div class="feedback">정답: 1번. erst는 'formerly'이며[cite: 33], 여기서는 'did canopy' 구조로 동사로 쓰였습니다.</div>
+        <div class="result-mark"></div>
     </div>
 
     <div class="quiz-item">
         <div class="sonnet-box">
-[Sonnet 12] [cite: 31]
-And nothing 'gainst Time's scythe can make defense [cite: 40]
-Save breed, to brave <u>him</u> when he takes thee hence. [cite: 41]</div>
-        <div class="question">Q2. 밑줄 친 'him'이 지칭하는 대상은 누구인가?</div>
+[Sonnet 12]
+And nothing 'gainst Time's scythe can make defense
+Save breed, to brave <u>him</u> when he takes thee hence.</div>
+        <div class="question">Q2. Who or what does the underlined pronoun "him" refer to?</div>
         <div class="options">
-            <button onclick="checkAnswer(this, false)">1) The Fair Youth (청년)</button>
-            <button onclick="checkAnswer(this, true)">2) Time (시간) [cite: 40]</button>
-            <button onclick="checkAnswer(this, false)">3) Death (죽음)</button>
-            <button onclick="checkAnswer(this, false)">4) The Speaker (화자)</button>
+            <button onclick="checkAnswer(this, false)">1) The Fair Youth</button>
+            <button onclick="checkAnswer(this, true)">2) Time</button>
+            <button onclick="checkAnswer(this, false)">3) Death</button>
+            <button onclick="checkAnswer(this, false)">4) The Speaker</button>
         </div>
-        <div class="feedback">정답: 2번. 앞 행의 'Time's scythe'를 받아 의인화된 Time을 가리킵니다[cite: 40].</div>
+        <div class="result-mark"></div>
     </div>
 
     <div class="quiz-item">
         <div class="sonnet-box">
-[Sonnet 18] [cite: 54, 58]
-Shall I compare thee to a summer's day? [cite: 55]
-Thou art more lovely and more temperate: [cite: 55]
-...
-And every fair from fair sometimes <u>declines</u>, [cite: 57]
-By chance or nature's changing course untrimmed... [cite: 57]</div>
-        <div class="question">Q3. 밑줄 친 'declines'의 문법적 역할과 의미로 가장 적절한 것은?</div>
+[Sonnet 18]
+And every fair from fair sometimes <u>declines</u>,
+By chance or nature's changing course untrimmed...</div>
+        <div class="question">Q3. What is the grammatical role and meaning of the underlined word "declines"?</div>
         <div class="options">
-            <button onclick="checkAnswer(this, false)">1) 'every fair'를 수식하는 형용사 (쇠퇴하는)</button>
-            <button onclick="checkAnswer(this, true)">2) 이 문장의 주동사 (쇠퇴하다/저물다)</button>
-            <button onclick="checkAnswer(this, false)">3) 'from fair'를 목적어로 받는 타동사 (거절하다)</button>
-            <button onclick="checkAnswer(this, false)">4) 문장 전체를 수식하는 분사구문 (기울어지며)</button>
+            <button onclick="checkAnswer(this, false)">1) An adjective modifying "every fair"</button>
+            <button onclick="checkAnswer(this, true)">2) The main verb meaning "to deteriorate or fade"</button>
+            <button onclick="checkAnswer(this, false)">3) A transitive verb taking "from fair" as an object</button>
+            <button onclick="checkAnswer(this, false)">4) A participle phrase describing the course of nature</button>
         </div>
-        <div class="feedback">정답: 2번. 'every fair'를 주어로 하는 본동사로, 모든 아름다운 것이 기운다는 뜻입니다[cite: 57].</div>
+        <div class="result-mark"></div>
     </div>
 
     <div class="quiz-item">
         <div class="sonnet-box">
-[Sonnet 18] [cite: 54, 58]
-So long as men can breathe, or eyes can see, [cite: 66]
-So long lives <u>this</u>, and <u>this</u> gives life to thee. [cite: 66]</div>
-        <div class="question">Q4. 두 번 반복된 밑줄 친 'this'가 공통적으로 가리키는 것은?</div>
+[Sonnet 18]
+So long as men can breathe, or eyes can see,
+So long lives <u>this</u>, and <u>this</u> gives life to thee.</div>
+        <div class="question">Q4. What does the underlined demonstrative pronoun "this" refer to?</div>
         <div class="options">
-            <button onclick="checkAnswer(this, false)">1) 여름날의 날씨 (A summer's day)</button>
-            <button onclick="checkAnswer(this, false)">2) 청년의 아름다움 (Thy beauty)</button>
-            <button onclick="checkAnswer(this, true)">3) 화자가 쓴 이 시 (This poetry) [cite: 74]</button>
-            <button onclick="checkAnswer(this, false)">4) 영원한 생명 (Eternal life)</button>
+            <button onclick="checkAnswer(this, false)">1) A summer's day</button>
+            <button onclick="checkAnswer(this, false)">2) The youth's physical beauty</button>
+            <button onclick="checkAnswer(this, true)">3) This specific poem (the sonnet)</button>
+            <button onclick="checkAnswer(this, false)">4) The concept of eternal life</button>
         </div>
-        <div class="feedback">정답: 3번. 화자는 자신의 시가 읽히는 한 대상이 영원히 살 것이라고 말합니다[cite: 73, 74].</div>
+        <div class="result-mark"></div>
     </div>
 
     <div class="quiz-item">
         <div class="sonnet-box">
-[Sonnet 29] [cite: 95, 96]
-...Yet in these thoughts myself almost despising, [cite: 108]
-Haply I think on thee—and then <u>my state</u>, [cite: 108]
-Like to the lark at break of day arising [cite: 108]
-From sullen earth, <u>sings</u> hymns at heaven's gate... [cite: 108]</div>
-        <div class="question">Q5. 밑줄 친 'sings'의 문법적인 주어(Subject)는 무엇인가?</div>
+[Sonnet 29]
+...and then <u>my state</u>,
+Like to the lark at break of day arising
+From sullen earth, <u>sings</u> hymns at heaven's gate...</div>
+        <div class="question">Q5. Which of the following is the grammatical subject of the verb "sings"?</div>
         <div class="options">
             <button onclick="checkAnswer(this, false)">1) the lark</button>
             <button onclick="checkAnswer(this, false)">2) break of day</button>
-            <button onclick="checkAnswer(this, true)">3) my state [cite: 108]</button>
+            <button onclick="checkAnswer(this, true)">3) my state</button>
             <button onclick="checkAnswer(this, false)">4) heaven's gate</button>
         </div>
-        <div class="feedback">정답: 3번. 'my state'가 주어이며[cite: 108], 'Like to the lark...'는 이를 수식하는 삽입구입니다.</div>
+        <div class="result-mark"></div>
     </div>
 
     <div class="quiz-item">
         <div class="sonnet-box">
-[Sonnet 29] [cite: 95, 96]
-When, in disgrace with fortune and men's eyes, [cite: 97]
-I all alone beweep my outcast state, [cite: 97]
-And trouble deaf heaven with my <u>bootless</u> cries, [cite: 97]
-And look upon myself, and curse my fate... [cite: 97]</div>
-        <div class="question">Q6. 밑줄 친 'bootless'의 문맥상 의미와 같은 것은?</div>
+[Sonnet 29]
+And trouble deaf heaven with my <u>bootless</u> cries,
+And look upon myself, and curse my fate...</div>
+        <div class="question">Q6. Which word is a synonym for the underlined word "bootless" in this context?</div>
         <div class="options">
-            <button onclick="checkAnswer(this, true)">1) Futile (소용없는, 무익한) [cite: 100]</button>
-            <button onclick="checkAnswer(this, false)">2) Loud (큰 소리의)</button>
-            <button onclick="checkAnswer(this, false)">3) Angry (분노한)</button>
-            <button onclick="checkAnswer(this, false)">4) Footless (신발을 벗은)</button>
+            <button onclick="checkAnswer(this, true)">1) Futile (useless)</button>
+            <button onclick="checkAnswer(this, false)">2) Resounding (loud)</button>
+            <button onclick="checkAnswer(this, false)">3) Indignant (angry)</button>
+            <button onclick="checkAnswer(this, false)">4) Unshod (without shoes)</button>
         </div>
-        <div class="feedback">정답: 1번. bootless는 '헛수고의', '무익한'이라는 뜻의 고어입니다[cite: 100].</div>
+        <div class="result-mark"></div>
     </div>
 
     <div class="quiz-item">
         <div class="sonnet-box">
-[Sonnet 130] [cite: 138, 140]
-My mistress' eyes are nothing like the sun; [cite: 142]
-Coral is far more <u>red</u> than her lips' <u>red</u>; [cite: 142]
-If snow be white, why then her breasts are dun; [cite: 143]
-If hairs be wires, black wires grow on her head. [cite: 143]</div>
-        <div class="question">Q7. 밑줄 친 두 'red'의 품사를 순서대로 바르게 나열한 것은?</div>
+[Sonnet 130]
+Coral is far more <u>red</u> than her lips' <u>red</u>;
+If snow be white, why then her breasts are dun...</div>
+        <div class="question">Q7. Identify the parts of speech for the two underlined "red" words in order.</div>
         <div class="options">
-            <button onclick="checkAnswer(this, false)">1) 명사 - 명사</button>
-            <button onclick="checkAnswer(this, false)">2) 형용사 - 형용사</button>
-            <button onclick="checkAnswer(this, true)">3) 형용사 - 명사</button>
-            <button onclick="checkAnswer(this, false)">4) 명사 - 형용사</button>
+            <button onclick="checkAnswer(this, false)">1) Noun - Noun</button>
+            <button onclick="checkAnswer(this, false)">2) Adjective - Adjective</button>
+            <button onclick="checkAnswer(this, true)">3) Adjective - Noun</button>
+            <button onclick="checkAnswer(this, false)">4) Noun - Adjective</button>
         </div>
-        <div class="feedback">정답: 3번. 앞의 red는 보어인 형용사, 뒤의 red는 소유격(lips') 뒤에 오는 명사입니다[cite: 142].</div>
+        <div class="result-mark"></div>
     </div>
 
     <div class="quiz-item">
         <div class="sonnet-box">
-[Sonnet 130] [cite: 138, 140]
-And yet, by heaven, I think my love as rare [cite: 137]
-As any she belied with false compare. [cite: 137]
-(참고: <u>dun</u>은 지문에서 'dull grayish brown'으로 설명됨 [cite: 149])</div>
-        <div class="question">Q8. 본문 중 "her breasts are <u>dun</u>"이라는 표현을 통해 화자가 의도하는 바는 무엇인가?</div>
+[Sonnet 130]
+If snow be white, why then her breasts are <u>dun</u>;
+If hairs be wires, black wires grow on her head.</div>
+        <div class="question">Q8. What is the speaker's intention in describing the mistress's breasts as "dun"?</div>
         <div class="options">
-            <button onclick="checkAnswer(this, false)">1) 연인의 살결이 눈처럼 하얗다고 찬양한다.</button>
-            <button onclick="checkAnswer(this, true)">2) 연인의 외모를 과장된 비유 없이 사실적으로 묘사한다. [cite: 137]</button>
-            <button onclick="checkAnswer(this, false)">3) 연인의 건강 상태가 좋지 않음을 암시한다.</button>
-            <button onclick="checkAnswer(this, false)">4) 연인이 화장을 너무 진하게 했음을 비판한다.</button>
+            <button onclick="checkAnswer(this, false)">1) To praise her skin as being as white as snow.</button>
+            <button onclick="checkAnswer(this, true)">2) To describe her appearance realistically without exaggerated metaphors.</button>
+            <button onclick="checkAnswer(this, false)">3) To imply that she is in poor health.</button>
+            <button onclick="checkAnswer(this, false)">4) To criticize her for not wearing enough makeup.</button>
         </div>
-        <div class="feedback">정답: 2번. 화자는 상투적인 미화 대신 실제 연인의 모습을 솔직하게 묘사하고 있습니다[cite: 137].</div>
+        <div class="result-mark"></div>
     </div>
 
 </div>
@@ -236,19 +226,29 @@ As any she belied with false compare. [cite: 137]
     function checkAnswer(btn, isCorrect) {
         const parent = btn.parentElement;
         const buttons = parent.querySelectorAll('button');
-        const feedback = parent.parentElement.querySelector('.feedback');
+        const resultMark = parent.parentElement.querySelector('.result-mark');
         
         buttons.forEach(b => {
             b.disabled = true;
-            if (b.innerText.includes(btn.innerText) && isCorrect) {
-                b.classList.add('correct');
-            } else if (b === btn && !isCorrect) {
-                b.classList.add('incorrect');
+            if (b === btn) {
+                if (isCorrect) {
+                    b.classList.add('correct');
+                    b.innerHTML += " ✓";
+                } else {
+                    b.classList.add('incorrect');
+                    b.innerHTML += " ✗";
+                }
+            } else {
+                // Show the correct answer even if they picked the wrong one
+                if (b.onclick.toString().includes('true')) {
+                    b.style.border = "2px solid #28a745";
+                }
             }
         });
         
-        feedback.style.display = 'block';
-        feedback.style.color = isCorrect ? '#155724' : '#721c24';
+        resultMark.style.display = 'block';
+        resultMark.innerText = isCorrect ? "Correct!" : "Incorrect";
+        resultMark.style.color = isCorrect ? "#155724" : "#721c24";
     }
 </script>
 
