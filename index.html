@@ -1,157 +1,256 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Snow White Reading Quiz</title>
+    <title>Shakespeare Sonnets Quiz</title>
     <style>
-        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 20px; }
-        h1 { text-align: center; color: #2c3e50; }
-        .question-container { margin-bottom: 30px; padding-bottom: 20px; border-bottom: 1px solid #eee; }
-        .passage-box { border: 2px solid #7f8c8d; background-color: #f9f9f9; padding: 15px; margin: 15px 0; border-radius: 5px; font-style: italic; }
-        .options { list-style-type: none; padding: 0; }
-        .options li { margin-bottom: 10px; }
-        button { display: block; width: 100%; padding: 15px; background-color: #3498db; color: white; border: none; border-radius: 5px; font-size: 18px; cursor: pointer; margin-top: 20px; }
-        button:hover { background-color: #2980b9; }
-        #result { margin-top: 20px; font-size: 20px; font-weight: bold; text-align: center; }
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #e74c3c;
+            --bg-color: #f4f7f6;
+            --box-bg: #ffffff;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h1 {
+            text-align: center;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+        }
+        .quiz-item {
+            background: var(--box-bg);
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .sonnet-box {
+            background-color: #fffaf0;
+            border-left: 5px solid #d4af37;
+            padding: 15px;
+            margin-bottom: 15px;
+            font-style: italic;
+            white-space: pre-wrap;
+            font-family: 'Georgia', serif;
+        }
+        .question {
+            font-weight: bold;
+            font-size: 1.1em;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+        .options {
+            list-style: none;
+            padding: 0;
+        }
+        .options li {
+            margin-bottom: 10px;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            text-align: left;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 1em;
+        }
+        button:hover {
+            background-color: #f0f0f0;
+            border-color: #bbb;
+        }
+        button.correct {
+            background-color: #d4edda !important;
+            border-color: #c3e6cb !important;
+            color: #155724;
+        }
+        button.incorrect {
+            background-color: #f8d7da !important;
+            border-color: #f5c6cb !important;
+            color: #721c24;
+        }
+        .feedback {
+            margin-top: 10px;
+            font-weight: bold;
+            display: none;
+        }
+        u { text-decoration: underline; font-weight: bold; color: #e67e22; }
     </style>
 </head>
 <body>
 
-    <h1>Snow White Reading Quiz</h1>
-    <p>Read the passages from the text carefully and answer the questions below.</p>
+<div class="container">
+    <h1>Shakespeare Sonnets Quiz</h1>
 
-    <form id="quizForm">
-        <!-- Question 1 -->
-        <div class="question-container">
-            <p><strong>1. Read the following passage. Which of the following is the closest in meaning to the underlined word?</strong></p>
-            <div class="passage-box">
-                "Walt Disney's Snow White and the Seven Dwarfs (1937) has so overshadowed other versions of the story that it is easy to forget that the tale is widely <u>disseminated</u> across a variety of cultures."
-            </div>
-            <ul class="options">
-                <li><label><input type="radio" name="q1" value="a"> a) isolated</label></li>
-                <li><label><input type="radio" name="q1" value="b"> b) spread</label></li>
-                <li><label><input type="radio" name="q1" value="c"> c) forgotten</label></li>
-                <li><label><input type="radio" name="q1" value="d"> d) criticized</label></li>
-            </ul>
+    <div class="quiz-item">
+        <div class="sonnet-box">
+[Sonnet 12] [cite: 31]
+When I do count the clock that tells the time, [cite: 23]
+And see the brave day sunk in hideous night; [cite: 23]
+...
+When lofty trees I see barren of leaves, [cite: 25]
+Which <u>erst</u> from heat did <u>canopy</u> the herd, [cite: 25]
+And summer's green all girded up in sheaves... [cite: 25]</div>
+        <div class="question">Q1. 위 지문의 밑줄 친 'erst'의 의미와 'canopy'의 문법적 기능으로 올바른 것은?</div>
+        <div class="options">
+            <button onclick="checkAnswer(this, true)">1) 'formerly' (이전에) [cite: 33] / 동사 (그늘을 드리우다)</button>
+            <button onclick="checkAnswer(this, false)">2) 'often' (자주) / 명사 (덮개)</button>
+            <button onclick="checkAnswer(this, false)">3) 'early' (일찍) / 형용사 (울창한)</button>
+            <button onclick="checkAnswer(this, false)">4) 'never' (결코) / 부사 (가리며)</button>
         </div>
+        <div class="feedback">정답: 1번. erst는 'formerly'이며[cite: 33], 여기서는 'did canopy' 구조로 동사로 쓰였습니다.</div>
+    </div>
 
-        <!-- Question 2 -->
-        <div class="question-container">
-            <p><strong>2. Read the following passage. Which of the following best fits in the blank?</strong></p>
-            <div class="passage-box">
-                "In many versions of the tale, the evil queen is the girl's biological mother, not a stepmother. (The Grimms, in an effort to preserve the ________ of motherhood, were forever turning biological mothers into stepmothers.)"
-            </div>
-            <ul class="options">
-                <li><label><input type="radio" name="q2" value="a"> a) cruelty</label></li>
-                <li><label><input type="radio" name="q2" value="b"> b) wealth</label></li>
-                <li><label><input type="radio" name="q2" value="c"> c) sanctity</label></li>
-                <li><label><input type="radio" name="q2" value="d"> d) burden</label></li>
-            </ul>
+    <div class="quiz-item">
+        <div class="sonnet-box">
+[Sonnet 12] [cite: 31]
+And nothing 'gainst Time's scythe can make defense [cite: 40]
+Save breed, to brave <u>him</u> when he takes thee hence. [cite: 41]</div>
+        <div class="question">Q2. 밑줄 친 'him'이 지칭하는 대상은 누구인가?</div>
+        <div class="options">
+            <button onclick="checkAnswer(this, false)">1) The Fair Youth (청년)</button>
+            <button onclick="checkAnswer(this, true)">2) Time (시간) [cite: 40]</button>
+            <button onclick="checkAnswer(this, false)">3) Death (죽음)</button>
+            <button onclick="checkAnswer(this, false)">4) The Speaker (화자)</button>
         </div>
+        <div class="feedback">정답: 2번. 앞 행의 'Time's scythe'를 받아 의인화된 Time을 가리킵니다[cite: 40].</div>
+    </div>
 
-        <!-- Question 3 -->
-        <div class="question-container">
-            <p><strong>3. Read the following passage. Which of the following is the closest in meaning to the underlined word?</strong></p>
-            <div class="passage-box">
-                "She was a beautiful lady, but proud and <u>overbearing</u>, and she could not bear the thought that anyone might be more beautiful than she was. She owned a magic mirror..."
-            </div>
-            <ul class="options">
-                <li><label><input type="radio" name="q3" value="a"> a) modest</label></li>
-                <li><label><input type="radio" name="q3" value="b"> b) generous</label></li>
-                <li><label><input type="radio" name="q3" value="c"> c) domineering</label></li>
-                <li><label><input type="radio" name="q3" value="d"> d) timid</label></li>
-            </ul>
+    <div class="quiz-item">
+        <div class="sonnet-box">
+[Sonnet 18] [cite: 54, 58]
+Shall I compare thee to a summer's day? [cite: 55]
+Thou art more lovely and more temperate: [cite: 55]
+...
+And every fair from fair sometimes <u>declines</u>, [cite: 57]
+By chance or nature's changing course untrimmed... [cite: 57]</div>
+        <div class="question">Q3. 밑줄 친 'declines'의 문법적 역할과 의미로 가장 적절한 것은?</div>
+        <div class="options">
+            <button onclick="checkAnswer(this, false)">1) 'every fair'를 수식하는 형용사 (쇠퇴하는)</button>
+            <button onclick="checkAnswer(this, true)">2) 이 문장의 주동사 (쇠퇴하다/저물다)</button>
+            <button onclick="checkAnswer(this, false)">3) 'from fair'를 목적어로 받는 타동사 (거절하다)</button>
+            <button onclick="checkAnswer(this, false)">4) 문장 전체를 수식하는 분사구문 (기울어지며)</button>
         </div>
+        <div class="feedback">정답: 2번. 'every fair'를 주어로 하는 본동사로, 모든 아름다운 것이 기운다는 뜻입니다[cite: 57].</div>
+    </div>
 
-        <!-- Question 4 -->
-        <div class="question-container">
-            <p><strong>4. Read the following passage. Which of the following best fits in the blank?</strong></p>
-            <div class="passage-box">
-                "The huntsman obeyed and took the girl out into the woods, but just as he was taking out his hunting knife and about to take aim at her innocent heart, she began weeping and ________ with him."
-            </div>
-            <ul class="options">
-                <li><label><input type="radio" name="q4" value="a"> a) arguing</label></li>
-                <li><label><input type="radio" name="q4" value="b"> b) pleading</label></li>
-                <li><label><input type="radio" name="q4" value="c"> c) fighting</label></li>
-                <li><label><input type="radio" name="q4" value="d"> d) laughing</label></li>
-            </ul>
+    <div class="quiz-item">
+        <div class="sonnet-box">
+[Sonnet 18] [cite: 54, 58]
+So long as men can breathe, or eyes can see, [cite: 66]
+So long lives <u>this</u>, and <u>this</u> gives life to thee. [cite: 66]</div>
+        <div class="question">Q4. 두 번 반복된 밑줄 친 'this'가 공통적으로 가리키는 것은?</div>
+        <div class="options">
+            <button onclick="checkAnswer(this, false)">1) 여름날의 날씨 (A summer's day)</button>
+            <button onclick="checkAnswer(this, false)">2) 청년의 아름다움 (Thy beauty)</button>
+            <button onclick="checkAnswer(this, true)">3) 화자가 쓴 이 시 (This poetry) [cite: 74]</button>
+            <button onclick="checkAnswer(this, false)">4) 영원한 생명 (Eternal life)</button>
         </div>
+        <div class="feedback">정답: 3번. 화자는 자신의 시가 읽히는 한 대상이 영원히 살 것이라고 말합니다[cite: 73, 74].</div>
+    </div>
 
-        <!-- Question 5 -->
-        <div class="question-container">
-            <p><strong>5. Read the following passage. Which of the following is the closest in meaning to the underlined word?</strong></p>
-            <div class="passage-box">
-                "By staining her face and dressing up as an old peddler woman, she made herself completely <u>unrecognizable</u>. In that disguise she traveled beyond the seven hills..."
-            </div>
-            <ul class="options">
-                <li><label><input type="radio" name="q5" value="a"> a) unidentifiable</label></li>
-                <li><label><input type="radio" name="q5" value="b"> b) conspicuous</label></li>
-                <li><label><input type="radio" name="q5" value="c"> c) transparent</label></li>
-                <li><label><input type="radio" name="q5" value="d"> d) familiar</label></li>
-            </ul>
+    <div class="quiz-item">
+        <div class="sonnet-box">
+[Sonnet 29] [cite: 95, 96]
+...Yet in these thoughts myself almost despising, [cite: 108]
+Haply I think on thee—and then <u>my state</u>, [cite: 108]
+Like to the lark at break of day arising [cite: 108]
+From sullen earth, <u>sings</u> hymns at heaven's gate... [cite: 108]</div>
+        <div class="question">Q5. 밑줄 친 'sings'의 문법적인 주어(Subject)는 무엇인가?</div>
+        <div class="options">
+            <button onclick="checkAnswer(this, false)">1) the lark</button>
+            <button onclick="checkAnswer(this, false)">2) break of day</button>
+            <button onclick="checkAnswer(this, true)">3) my state [cite: 108]</button>
+            <button onclick="checkAnswer(this, false)">4) heaven's gate</button>
         </div>
+        <div class="feedback">정답: 3번. 'my state'가 주어이며[cite: 108], 'Like to the lark...'는 이를 수식하는 삽입구입니다.</div>
+    </div>
 
-        <!-- Question 6 -->
-        <div class="question-container">
-            <p><strong>6. Read the following passage. Which of the following is the closest in meaning to the underlined word?</strong></p>
-            <div class="passage-box">
-                "The queen went into a remote, hidden chamber in which no one ever set foot and made an apple full of poison. On the outside it looked beautiful—white with red cheeks—and if you saw it, you <u>craved</u> it."
-            </div>
-            <ul class="options">
-                <li><label><input type="radio" name="q6" value="a"> a) desired</label></li>
-                <li><label><input type="radio" name="q6" value="b"> b) despised</label></li>
-                <li><label><input type="radio" name="q6" value="c"> c) ignored</label></li>
-                <li><label><input type="radio" name="q6" value="d"> d) feared</label></li>
-            </ul>
+    <div class="quiz-item">
+        <div class="sonnet-box">
+[Sonnet 29] [cite: 95, 96]
+When, in disgrace with fortune and men's eyes, [cite: 97]
+I all alone beweep my outcast state, [cite: 97]
+And trouble deaf heaven with my <u>bootless</u> cries, [cite: 97]
+And look upon myself, and curse my fate... [cite: 97]</div>
+        <div class="question">Q6. 밑줄 친 'bootless'의 문맥상 의미와 같은 것은?</div>
+        <div class="options">
+            <button onclick="checkAnswer(this, true)">1) Futile (소용없는, 무익한) [cite: 100]</button>
+            <button onclick="checkAnswer(this, false)">2) Loud (큰 소리의)</button>
+            <button onclick="checkAnswer(this, false)">3) Angry (분노한)</button>
+            <button onclick="checkAnswer(this, false)">4) Footless (신발을 벗은)</button>
         </div>
+        <div class="feedback">정답: 1번. bootless는 '헛수고의', '무익한'이라는 뜻의 고어입니다[cite: 100].</div>
+    </div>
 
-        <!-- Question 7 -->
-        <div class="question-container">
-            <p><strong>7. Read the following passage. Which of the following best fits in the blank?</strong></p>
-            <div class="passage-box">
-                "They brought the coffin up to the top of a mountain, and one of them always remained by it to keep ________. Animals also came to mourn Snow White, first an owl, then a raven, and finally a dove."
-            </div>
-            <ul class="options">
-                <li><label><input type="radio" name="q7" value="a"> a) silent</label></li>
-                <li><label><input type="radio" name="q7" value="b"> b) vigil</label></li>
-                <li><label><input type="radio" name="q7" value="c"> c) warm</label></li>
-                <li><label><input type="radio" name="q7" value="d"> d) pace</label></li>
-            </ul>
+    <div class="quiz-item">
+        <div class="sonnet-box">
+[Sonnet 130] [cite: 138, 140]
+My mistress' eyes are nothing like the sun; [cite: 142]
+Coral is far more <u>red</u> than her lips' <u>red</u>; [cite: 142]
+If snow be white, why then her breasts are dun; [cite: 143]
+If hairs be wires, black wires grow on her head. [cite: 143]</div>
+        <div class="question">Q7. 밑줄 친 두 'red'의 품사를 순서대로 바르게 나열한 것은?</div>
+        <div class="options">
+            <button onclick="checkAnswer(this, false)">1) 명사 - 명사</button>
+            <button onclick="checkAnswer(this, false)">2) 형용사 - 형용사</button>
+            <button onclick="checkAnswer(this, true)">3) 형용사 - 명사</button>
+            <button onclick="checkAnswer(this, false)">4) 명사 - 형용사</button>
         </div>
+        <div class="feedback">정답: 3번. 앞의 red는 보어인 형용사, 뒤의 red는 소유격(lips') 뒤에 오는 명사입니다[cite: 142].</div>
+    </div>
 
-        <button type="button" onclick="checkAnswers()">Submit and Get Score</button>
-    </form>
+    <div class="quiz-item">
+        <div class="sonnet-box">
+[Sonnet 130] [cite: 138, 140]
+And yet, by heaven, I think my love as rare [cite: 137]
+As any she belied with false compare. [cite: 137]
+(참고: <u>dun</u>은 지문에서 'dull grayish brown'으로 설명됨 [cite: 149])</div>
+        <div class="question">Q8. 본문 중 "her breasts are <u>dun</u>"이라는 표현을 통해 화자가 의도하는 바는 무엇인가?</div>
+        <div class="options">
+            <button onclick="checkAnswer(this, false)">1) 연인의 살결이 눈처럼 하얗다고 찬양한다.</button>
+            <button onclick="checkAnswer(this, true)">2) 연인의 외모를 과장된 비유 없이 사실적으로 묘사한다. [cite: 137]</button>
+            <button onclick="checkAnswer(this, false)">3) 연인의 건강 상태가 좋지 않음을 암시한다.</button>
+            <button onclick="checkAnswer(this, false)">4) 연인이 화장을 너무 진하게 했음을 비판한다.</button>
+        </div>
+        <div class="feedback">정답: 2번. 화자는 상투적인 미화 대신 실제 연인의 모습을 솔직하게 묘사하고 있습니다[cite: 137].</div>
+    </div>
 
-    <div id="result"></div>
+</div>
 
-    <script>
-        function checkAnswers() {
-            const answers = { q1: 'b', q2: 'c', q3: 'c', q4: 'b', q5: 'a', q6: 'a', q7: 'b' };
-            let score = 0;
-            let total = 7;
-
-            for (let i = 1; i <= total; i++) {
-                const selected = document.querySelector(`input[name="q${i}"]:checked`);
-                if (selected && selected.value === answers[`q${i}`]) {
-                    score++;
-                }
+<script>
+    function checkAnswer(btn, isCorrect) {
+        const parent = btn.parentElement;
+        const buttons = parent.querySelectorAll('button');
+        const feedback = parent.parentElement.querySelector('.feedback');
+        
+        buttons.forEach(b => {
+            b.disabled = true;
+            if (b.innerText.includes(btn.innerText) && isCorrect) {
+                b.classList.add('correct');
+            } else if (b === btn && !isCorrect) {
+                b.classList.add('incorrect');
             }
-
-            const resultDiv = document.getElementById('result');
-            resultDiv.innerHTML = `Your Score: ${score} / ${total}`;
-            if (score === total) {
-                resultDiv.style.color = "green";
-                resultDiv.innerHTML += "<br>Excellent work!";
-            } else if (score >= 4) {
-                resultDiv.style.color = "blue";
-                resultDiv.innerHTML += "<br>Good job, but you can review the text again.";
-            } else {
-                resultDiv.style.color = "red";
-                resultDiv.innerHTML += "<br>Please read the story more carefully and try again.";
-            }
-        }
-    </script>
+        });
+        
+        feedback.style.display = 'block';
+        feedback.style.color = isCorrect ? '#155724' : '#721c24';
+    }
+</script>
 
 </body>
 </html>
