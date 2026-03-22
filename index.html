@@ -3,252 +3,149 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shakespeare Sonnets: Grammar Quiz</title>
+    <title>Rapunzel Reading Comprehension Quiz</title>
     <style>
-        :root {
-            --primary-color: #2c3e50;
-            --accent-color: #e74c3c;
-            --bg-color: #f4f7f6;
-            --box-bg: #ffffff;
-        }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--bg-color);
-            color: #333;
-            line-height: 1.6;
-            margin: 0;
-            padding: 20px;
-        }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        h1 {
-            text-align: center;
-            color: var(--primary-color);
-            border-bottom: 2px solid var(--primary-color);
-            padding-bottom: 10px;
-        }
-        .quiz-item {
-            background: var(--box-bg);
-            padding: 20px;
-            margin-bottom: 30px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        .sonnet-box {
-            background-color: #fffaf0;
-            border-left: 5px solid #d4af37;
-            padding: 15px;
-            margin-bottom: 15px;
-            font-style: italic;
-            white-space: pre-wrap;
-            font-family: 'Georgia', serif;
-        }
-        .question {
-            font-weight: bold;
-            font-size: 1.1em;
-            margin-bottom: 15px;
-            color: var(--primary-color);
-        }
-        .options {
-            list-style: none;
-            padding: 0;
-        }
-        .options li {
-            margin-bottom: 10px;
-        }
-        button {
-            width: 100%;
-            padding: 12px;
-            text-align: left;
-            background: #fff;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: all 0.2s;
-            font-size: 1em;
-        }
-        button:hover {
-            background-color: #f0f0f0;
-            border-color: #bbb;
-        }
-        button.correct {
-            background-color: #d4edda !important;
-            border-color: #c3e6cb !important;
-            color: #155724;
-            font-weight: bold;
-        }
-        button.incorrect {
-            background-color: #f8d7da !important;
-            border-color: #f5c6cb !important;
-            color: #721c24;
-        }
-        .result-mark {
-            margin-top: 10px;
-            font-weight: bold;
-            font-size: 1.2em;
-            display: none;
-        }
-        u { text-decoration: underline; font-weight: bold; color: #e67e22; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 20px; background-color: #f4f7f6; }
+        .quiz-container { background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        h1 { color: #2c3e50; text-align: center; border-bottom: 2px solid #3498db; padding-bottom: 10px; }
+        .question { margin-bottom: 25px; padding: 15px; border-left: 5px solid #3498db; background: #fafafa; }
+        .question p { font-weight: bold; margin-bottom: 10px; }
+        .options { list-style: none; padding: 0; }
+        .options li { margin-bottom: 8px; }
+        button { background-color: #3498db; color: white; border: none; padding: 10px 20px; border-radius: 4px; cursor: pointer; font-size: 16px; margin-top: 20px; width: 100%; }
+        button:hover { background-color: #2980b9; }
+        .result { margin-top: 20px; font-weight: bold; text-align: center; display: none; padding: 15px; border-radius: 4px; }
+        .correct { color: #27ae60; background: #e8f8f5; }
+        .wrong { color: #c0392b; background: #fdf2f2; }
+        .explanation { font-size: 0.9em; color: #666; margin-top: 5px; font-style: italic; }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <h1>Shakespeare Sonnets: Grammar Quiz</h1>
-
-    <div class="quiz-item">
-        <div class="sonnet-box">
-[Sonnet 12]
-When lofty trees I see barren of leaves,
-Which <u>erst</u> from heat did <u>canopy</u> the herd,
-And summer's green all girded up in sheaves...</div>
-        <div class="question">Q1. What is the meaning of "erst" and the grammatical function of "canopy" in this context?</div>
-        <div class="options">
-            <button onclick="checkAnswer(this, true)">1) "formerly" / Verb (to cover or shield)</button>
-            <button onclick="checkAnswer(this, false)">2) "often" / Noun (a covering)</button>
-            <button onclick="checkAnswer(this, false)">3) "early" / Adjective (thickly leaved)</button>
-            <button onclick="checkAnswer(this, false)">4) "never" / Adverb (protectively)</button>
+<div class="quiz-container">
+    <h1>Rapunzel: Text Analysis Quiz</h1>
+    
+    <form id="quizForm">
+        <div class="question">
+            <p>1. In the text: "An adult barters a child to secure personal welfare... <u>This uneven exchange</u> is presented in matter-of-fact terms." What does the underlined part refer to?</p>
+            <ul class="options">
+                <li><input type="radio" name="q1" value="a"> The prince climbing the tower</li>
+                <li><input type="radio" name="q1" value="b"> An adult trading a child for safety</li>
+                <li><input type="radio" name="q1" value="c"> Rapunzel letting her hair down</li>
+            </ul>
         </div>
-        <div class="result-mark"></div>
-    </div>
 
-    <div class="quiz-item">
-        <div class="sonnet-box">
-[Sonnet 12]
-And nothing 'gainst Time's scythe can make defense
-Save breed, to brave <u>him</u> when he takes thee hence.</div>
-        <div class="question">Q2. Who or what does the underlined pronoun "him" refer to?</div>
-        <div class="options">
-            <button onclick="checkAnswer(this, false)">1) The Fair Youth</button>
-            <button onclick="checkAnswer(this, true)">2) Time</button>
-            <button onclick="checkAnswer(this, false)">3) Death</button>
-            <button onclick="checkAnswer(this, false)">4) The Speaker</button>
+        <div class="question">
+            <p>2. Fill in the blank with the correct verb as used in the story: "Rapunzel, Rapunzel, ____ your hair down."</p>
+            <ul class="options">
+                <li><input type="radio" name="q2" value="a"> Take</li>
+                <li><input type="radio" name="q2" value="b"> Let</li>
+                <li><input type="radio" name="q2" value="c"> Put</li>
+                <li><input type="radio" name="q2" value="d"> Drop</li>
+            </ul>
         </div>
-        <div class="result-mark"></div>
-    </div>
 
-    <div class="quiz-item">
-        <div class="sonnet-box">
-[Sonnet 18]
-And every fair from fair sometimes <u>declines</u>,
-By chance or nature's changing course untrimmed...</div>
-        <div class="question">Q3. What is the grammatical role and meaning of the underlined word "declines"?</div>
-        <div class="options">
-            <button onclick="checkAnswer(this, false)">1) An adjective modifying "every fair"</button>
-            <button onclick="checkAnswer(this, true)">2) The main verb meaning "to deteriorate or fade"</button>
-            <button onclick="checkAnswer(this, false)">3) A transitive verb taking "from fair" as an object</button>
-            <button onclick="checkAnswer(this, false)">4) A participle phrase describing the course of nature</button>
+        <div class="question">
+            <p>3. Complete the sentence from the French version: "The fairy turns the Rapunzel figure ____ a frog."</p>
+            <ul class="options">
+                <li><input type="radio" name="q3" value="a"> into</li>
+                <li><input type="radio" name="q3" value="b"> to</li>
+                <li><input type="radio" name="q3" value="c"> like</li>
+            </ul>
         </div>
-        <div class="result-mark"></div>
-    </div>
 
-    <div class="quiz-item">
-        <div class="sonnet-box">
-[Sonnet 18]
-So long as men can breathe, or eyes can see,
-So long lives <u>this</u>, and <u>this</u> gives life to thee.</div>
-        <div class="question">Q4. What does the underlined demonstrative pronoun "this" refer to?</div>
-        <div class="options">
-            <button onclick="checkAnswer(this, false)">1) A summer's day</button>
-            <button onclick="checkAnswer(this, false)">2) The youth's physical beauty</button>
-            <button onclick="checkAnswer(this, true)">3) This specific poem (the sonnet)</button>
-            <button onclick="checkAnswer(this, false)">4) The concept of eternal life</button>
+        <div class="question">
+            <p>4. Choose the correct tense for the blank: "...a man and a woman who, for many years, ____ wishing for a child, but with no success."</p>
+            <ul class="options">
+                <li><input type="radio" name="q4" value="a"> have been</li>
+                <li><input type="radio" name="q4" value="b"> had been</li>
+                <li><input type="radio" name="q4" value="c"> were</li>
+            </ul>
         </div>
-        <div class="result-mark"></div>
-    </div>
 
-    <div class="quiz-item">
-        <div class="sonnet-box">
-[Sonnet 29]
-...and then <u>my state</u>,
-Like to the lark at break of day arising
-From sullen earth, <u>sings</u> hymns at heaven's gate...</div>
-        <div class="question">Q5. Which of the following is the grammatical subject of the verb "sings"?</div>
-        <div class="options">
-            <button onclick="checkAnswer(this, false)">1) the lark</button>
-            <button onclick="checkAnswer(this, false)">2) break of day</button>
-            <button onclick="checkAnswer(this, true)">3) my state</button>
-            <button onclick="checkAnswer(this, false)">4) heaven's gate</button>
+        <div class="question">
+            <p>5. In the sentence "...his eyes were scratched out by the bramble patch <u>into which</u> he had fallen," what does "which" refer to?</p>
+            <ul class="options">
+                <li><input type="radio" name="q5" value="a"> The tower</li>
+                <li><input type="radio" name="q5" value="b"> The prince's eyes</li>
+                <li><input type="radio" name="q5" value="c"> The bramble patch</li>
+            </ul>
         </div>
-        <div class="result-mark"></div>
-    </div>
 
-    <div class="quiz-item">
-        <div class="sonnet-box">
-[Sonnet 29]
-And trouble deaf heaven with my <u>bootless</u> cries,
-And look upon myself, and curse my fate...</div>
-        <div class="question">Q6. Which word is a synonym for the underlined word "bootless" in this context?</div>
-        <div class="options">
-            <button onclick="checkAnswer(this, true)">1) Futile (useless)</button>
-            <button onclick="checkAnswer(this, false)">2) Resounding (loud)</button>
-            <button onclick="checkAnswer(this, false)">3) Indignant (angry)</button>
-            <button onclick="checkAnswer(this, false)">4) Unshod (without shoes)</button>
+        <div class="question">
+            <p>6. In the phrase "as beautiful as <u>spun</u> gold," what is the grammatical function of "spun"?</p>
+            <ul class="options">
+                <li><input type="radio" name="q6" value="a"> The main verb of the sentence</li>
+                <li><input type="radio" name="q6" value="b"> A past participle acting as an adjective</li>
+                <li><input type="radio" name="q6" value="c"> A noun representing a material</li>
+            </ul>
         </div>
-        <div class="result-mark"></div>
-    </div>
 
-    <div class="quiz-item">
-        <div class="sonnet-box">
-[Sonnet 130]
-Coral is far more <u>red</u> than her lips' <u>red</u>;
-If snow be white, why then her breasts are dun...</div>
-        <div class="question">Q7. Identify the parts of speech for the two underlined "red" words in order.</div>
-        <div class="options">
-            <button onclick="checkAnswer(this, false)">1) Noun - Noun</button>
-            <button onclick="checkAnswer(this, false)">2) Adjective - Adjective</button>
-            <button onclick="checkAnswer(this, true)">3) Adjective - Noun</button>
-            <button onclick="checkAnswer(this, false)">4) Noun - Adjective</button>
+        <div class="question">
+            <p>7. In the sentence "She made a salad out of it <u>right away</u>," which phrase can replace the underlined part?</p>
+            <ul class="options">
+                <li><input type="radio" name="q7" value="a"> at once</li>
+                <li><input type="radio" name="q7" value="b"> by the way</li>
+                <li><input type="radio" name="q7" value="c"> after a while</li>
+            </ul>
         </div>
-        <div class="result-mark"></div>
-    </div>
 
-    <div class="quiz-item">
-        <div class="sonnet-box">
-[Sonnet 130]
-If snow be white, why then her breasts are <u>dun</u>;
-If hairs be wires, black wires grow on her head.</div>
-        <div class="question">Q8. What is the speaker's intention in describing the mistress's breasts as "dun"?</div>
-        <div class="options">
-            <button onclick="checkAnswer(this, false)">1) To praise her skin as being as white as snow.</button>
-            <button onclick="checkAnswer(this, true)">2) To describe her appearance realistically without exaggerated metaphors.</button>
-            <button onclick="checkAnswer(this, false)">3) To imply that she is in poor health.</button>
-            <button onclick="checkAnswer(this, false)">4) To criticize her for not wearing enough makeup.</button>
+        <div class="question">
+            <p>8. What is the main subject of the verb "sounds" in this sentence: "The story of a girl locked in a tower sounds a powerful chord..."</p>
+            <ul class="options">
+                <li><input type="radio" name="q8" value="a"> girl</li>
+                <li><input type="radio" name="q8" value="b"> tower</li>
+                <li><input type="radio" name="q8" value="c"> The story</li>
+            </ul>
         </div>
-        <div class="result-mark"></div>
-    </div>
 
+        <div class="question">
+            <p>9. Choose the correct word for the blank: "____ the parents at the start of the story barter away the child... Mother Gothel figures as the overprotective parent."</p>
+            <ul class="options">
+                <li><input type="radio" name="q9" value="a"> Because</li>
+                <li><input type="radio" name="q9" value="b"> Whereas</li>
+                <li><input type="radio" name="q9" value="c"> Therefore</li>
+            </ul>
+        </div>
+
+        <div class="question">
+            <p>10. What does the idiom in this sentence mean? "The prince was <u>beside himself</u> with grief."</p>
+            <ul class="options">
+                <li><input type="radio" name="q10" value="a"> He was standing next to someone.</li>
+                <li><input type="radio" name="q10" value="b"> He was extremely upset and overwhelmed.</li>
+                <li><input type="radio" name="q10" value="c"> He was feeling very proud.</li>
+            </ul>
+        </div>
+
+        <button type="button" onclick="checkAnswers()">Submit Answers</button>
+    </form>
+
+    <div id="resultBox" class="result"></div>
 </div>
 
 <script>
-    function checkAnswer(btn, isCorrect) {
-        const parent = btn.parentElement;
-        const buttons = parent.querySelectorAll('button');
-        const resultMark = parent.parentElement.querySelector('.result-mark');
-        
-        buttons.forEach(b => {
-            b.disabled = true;
-            if (b === btn) {
-                if (isCorrect) {
-                    b.classList.add('correct');
-                    b.innerHTML += " ✓";
-                } else {
-                    b.classList.add('incorrect');
-                    b.innerHTML += " ✗";
-                }
-            } else {
-                // Show the correct answer even if they picked the wrong one
-                if (b.onclick.toString().includes('true')) {
-                    b.style.border = "2px solid #28a745";
-                }
+    function checkAnswers() {
+        const answers = {
+            q1: 'b', q2: 'b', q3: 'a', q4: 'b', q5: 'c',
+            q6: 'b', q7: 'a', q8: 'c', q9: 'b', q10: 'b'
+        };
+        let score = 0;
+        let total = 10;
+        const form = document.getElementById('quizForm');
+        const resultBox = document.getElementById('resultBox');
+
+        for (let key in answers) {
+            const selected = form.elements[key].value;
+            if (selected === answers[key]) {
+                score++;
             }
-        });
+        }
+
+        resultBox.style.display = 'block';
+        resultBox.innerHTML = `You scored ${score} out of ${total}!`;
+        resultBox.className = score >= 7 ? 'result correct' : 'result wrong';
         
-        resultMark.style.display = 'block';
-        resultMark.innerText = isCorrect ? "Correct!" : "Incorrect";
-        resultMark.style.color = isCorrect ? "#155724" : "#721c24";
+        window.scrollTo(0, document.body.scrollHeight);
     }
 </script>
 
